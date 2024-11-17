@@ -12,7 +12,7 @@ model，这是一个同时具备听和说两个链路的端到端的系统。对
 * It is possible that the iSLM interacts with an unseen speaker.
   提出了两个场景：基于命令的FDM，与特定的指令交互；Voice-based FDM：与未知speaker进行交互；实验结果表明，
   具有监听通道的 LSLM 对噪声输入具有鲁棒性，并且对话轮转换很敏感。
-  ![img.png](./images/img.png)
+  ![img.png](images/img.png)
   现有的模型都不支持打断，说话turn转换；
   在全双工的模型中，模型不仅需要根据当前的context已经当前的回复而且需要另一个channel的信息来产生下一个回复的token。
   $ R ,S,C$

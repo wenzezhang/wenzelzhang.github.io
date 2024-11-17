@@ -6,7 +6,7 @@
 这两个模块整合起来用户回答最后的问题。在多个音视问答的基准上都显示我们的模型不仅能够很好的理解视听线索，同时也能够有效的回答复杂的问题；
 ***
 Audio Visual Question Answering任务指的是和音频视频都相关的任务，比如：视频中的那个乐器第一个发出声音？谁先发出笑声？
-![img.png](./images/img.png)
+![img.png](images/img.png)
 ***
 AVQA：数据集： MUSIC-AVQA ，Pano-AVQA
 如何选取关键帧：均匀采样，CLIP相似度；
@@ -15,7 +15,7 @@ AVQA：数据集： MUSIC-AVQA ，Pano-AVQA
 首先使用**Text Prompt Constructor**，相当于问题改写，目前是能够更好的识别关键帧。使用TPM定位关键帧，然后定位关键帧中的关键视觉区域和音频片段，
 学习音频和视频之间的关联模块。SPM在选择的帧上合并视觉token，获得潜在目标的语义信息，然后这些token与音频token进行跨模态交互。最终，混合所有的这些特征，
 获得最终的表示。
-![img_1.png](./images/img_1.png)
+![img_1.png](images/img_1.png)
 ***
 首先是对输入数据的处理：先分成T个没有重叠的音频和视频patch，每个patch长度为1s。然后将每个视频帧分为M个patches并在每个开始处添加[CLS]token；
 问题被分为N个单词；
@@ -23,7 +23,7 @@ AVQA：数据集： MUSIC-AVQA ，Pano-AVQA
 * 视觉表示：对于每个视觉片段Vt采样固定数目的帧，使用CLIP模型来抽取帧级别和token级别的特征。
 
 在不同的帧之间合并相似的图像token，在transformer中的每一层都执行token合并。合并后的token与合并前的token以及音频特征做交叉注意力。
-![img_2.png](./images/img_2.png)
+![img_2.png](images/img_2.png)
 ***
 数据集：
 MUSIC-AVQA： 9288个短视频 45867个问答对。
