@@ -134,3 +134,7 @@ Evaluation dataset： AudioCaps test set
 - TANGOFLUX在具备卓越性能的同时，其推理时间也短得多，与其他模型相比效率更高。
 
 - 在较少的采样步骤下，TANGOFLUX相较于其他模型，性能下降幅度更小。
+
+---
+
+DiT: https://www.cvmart.net/community/detail/8508
